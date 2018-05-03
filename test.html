@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Test</title>
+    <script>
+        function onLoad() {
+            fetch('hello_wasm.gc.wasm')
+                .then(r => r.arrayBuffer())
+                .then(r => WebAssembly.instantiate(r))
+                .then(wasm_module => {
+                    let result = wasm_module.instance.exports.add_one(2);
+                    alert(`2 + 1 = ${result}`);
+                });
+        }
+    </script>
+</head>
+<body onload="onLoad();">
+    
+</body>
+</html>

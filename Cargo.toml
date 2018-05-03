@@ -1,0 +1,9 @@
+[package]
+name = "hello-wasm"
+version = "0.1.0"
+authors = ["neurowhai <tlsehdgus321@naver.com>"]
+
+[lib]
+crate-type = ["cdylib"]
+
+[dependencies]
